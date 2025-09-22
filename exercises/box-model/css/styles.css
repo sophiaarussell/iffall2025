@@ -1,0 +1,9 @@
+.overflow-example {
+  width: 50%;
+  height: 300px;
+  overflow: auto;
+  background-color: #eeeeee;
+  padding: 2rem;
+  border: 10px solid #dddddd;
+  box-sizing: border-box;
+}
