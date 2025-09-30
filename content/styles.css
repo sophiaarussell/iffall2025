@@ -1,0 +1,17 @@
+html{
+ color: black;
+        font-size: 20pt;  
+}
+
+  body{ 
+    margin: 20%;
+    font-family: 'Ubuntu', Arial, sans-serif;
+  }
+
+  h1{ 
+    font-size: 32pt; 
+  }
+
+  h2{ 
+    font-size: 24pt; 
+  }
