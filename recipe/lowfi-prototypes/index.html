@@ -3,24 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <title>Low-Fi Prototypes</title>
+  <style>
+    .vertical-images {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .vertical-images img {
+      width: 400px;
+      border-radius: 8px;
+      display: block;
+    }
+    .filename-tag {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 8px;
+      font-family: monospace;
+    }
+  </style>
 </head>
 <body>
   <h1>Low-Fi Prototypes</h1>
   <p>Click the images below to view them full size:</p>
-  <a href="images/mobile12.JPG" target="_blank">
-    <img src="images/mobile12.JPG" alt="Mobile 1 and 2" style="width:400px; border-radius:8px;">
-  </a>
-  <a href="images/mobile3.JPG" target="_blank">
-    <img src="images/mobile3.JPG" alt="Mobile 3" style="width:400px; border-radius:8px; transform: rotate(90deg);">
-  </a>
-  <a href="images/web1.JPG" target="_blank">
-    <img src="images/web1.JPG" alt="Web 1" style="width:400px; border-radius:8px;">
-  </a>
-  <a href="images/web2.JPG" target="_blank">
-    <img src="images/web2.JPG" alt="Web 2" style="width:400px; border-radius:8px; transform: rotate(90deg);">
-  </a>
-  <a href="images/web3.JPG" target="_blank">
-    <img src="images/web3.JPG" alt="Web 3" style="width:400px; border-radius:8px;">
-  </a>
+  <div class="vertical-images">
+    <div>
+      <div class="filename-tag">Mobile Template 1 & 2</div>
+      <a href="images/mobile12.JPG" target="_blank">
+        <img src="images/mobile12.JPG" alt="Mobile 1 and 2">
+      </a>
+    </div>
+    <div>
+      <div class="filename-tag">Mobile Template 3</div>
+      <a href="images/mobile3.JPG" target="_blank">
+        <img src="images/mobile3.JPG" alt="Mobile 3">
+      </a>
+    </div>
+    <div>
+      <div class="filename-tag">Web Template 1</div>
+      <a href="images/web1.JPG" target="_blank">
+        <img src="images/web1.JPG" alt="Web 1">
+      </a>
+    </div>
+    <div>
+      <div class="filename-tag">Web Template 2</div>
+      <a href="images/web2.JPG" target="_blank">
+        <img src="images/web2.JPG" alt="Web 2">
+      </a>
+    </div>
+    <div>
+      <div class="filename-tag">Web Template 3</div>
+      <a href="images/web3.JPG" target="_blank">
+        <img src="images/web3.JPG" alt="Web 3">
+      </a>
+    </div>
+  </div>
 </body>
 </html>
