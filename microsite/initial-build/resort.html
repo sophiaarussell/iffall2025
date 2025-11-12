@@ -7,25 +7,150 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- place at top of <body> in index.html, history.html, resort.html, awards.html -->
-  <div id="site-header"></div>
+ <title>Hamburger Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <noscript>
-    <header style="padding:12px 20px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.06)">
-      <h1 style="margin:0;display:inline-block;font-size:1.125rem">Cedar Point</h1>
-      <nav style="float:right">
-        <a href="index.html">Home</a> |
-        <a href="history.html">History</a> |
-        <a href="resort.html">Resort &amp; Attractions</a> |
-        <a href="awards.html">Awards</a>
-      </nav>
-    </header>
-  </noscript>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        nav {
+            background: lightblue;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: lightcoral;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: lightcoral;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: blue;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: lightcoral;
+            transition: all 0.3s;
+            border-radius: 3px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: lightblue;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: lightblue;
+                width: 100%;
+                text-align: center;
+                transition: left 0.3s;
+                padding: 2rem 0;
+                gap: 0;
+            }
+
+            .nav-links li {
+                padding: 1rem 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">MyWebsite</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="resort.html">Resort</a></li>
+            <li><a href="awards.html">Awards</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+<head>
   <main class="wrap">
-    <h2>Resort &amp; Attractions</h2>
+    <h1>Resort &amp; Attractions</h1>
     <p>Discover our world-class attractions and accommodations for an unforgettable stay.</p>
-  </main>
+  <p>
+    Cedar Point owns and operates six resorts, three of which are located on park grounds. Guests staying at the resorts are given early access to the park before it opens to the general public, during which time a select number of rides are available such as Steel Vengeance and Millennium Force. 
+  </p>
+  <p>Camper Village</p>
+  <img src="images/campervillage.jpg" alt="Camper Village" style="max-width: 100%;">
+
+  <p>Lighthouse Point</p>
+  <img src="images/lighthousepoint.jpg" alt="Lighthouse Point" style="max-width: 100%;">
+
+  <p>Hotel Breakers</p>
+  <img src="images/hotelbreakers.png" alt="Hotel Breakers" style="max-width: 100%;">
+</head>
+</main>
   <footer class="wrap"><p>&copy; 2023 Cedar Point. All rights reserved.</p></footer>
 </body>
 </html>
