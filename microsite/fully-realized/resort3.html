@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cedar Point — Resort & Attractions</title>
+  <link rel="stylesheet" href="https://use.typekit.net/bpy2tfa.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+ <title>Hamburger Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        nav {
+            background: rgb(9, 54, 255);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: rgb(255, 123, 0);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            transition: all 0.3s;
+            border-radius: 3px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: rgb(9, 54, 255);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgb(9, 54, 255);
+                width: 100%;
+                text-align: center;
+                transition: left 0.3s;
+                padding: 2rem 0;
+                gap: 0;
+            }
+
+            .nav-links li {
+                padding: 1rem 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+        }
+
+        .resort-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+    }
+
+    .resort-card {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .resort-title {
+      font-family: "afacade-mono", monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 260px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    /* Arrows */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 8px 12px;
+      background: rgba(0,0,0,0.4);
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 4px;
+      user-select: none;
+    }
+
+    .prev:hover, .next:hover {
+      background: rgba(0,0,0,0.6);
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    .resort-description {
+      margin-top: 1rem;
+      font-family: afacade-mono, monospace;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Responsive */
+    @media(max-width: 980px) {
+      .resort-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">MyWebsite</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history2.html">History</a></li>
+            <li><a href="resort3.html">Resort</a></li>
+            <li><a href="awards2.html">Awards</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+  <main class="wrap">
+    
+
+
+    <h1>Resort & Attractions</h1>
+    <div class="container">
+    </div>
+ <p>Discover our world-class attractions and accommodations for an unforgettable stay.</p>
+  <p>Cedar Point owns and operates six resorts, three of which are located on park grounds. Guests staying at the resorts are given early access to the park before it opens to the general public.</p>
+
+  <!-- ==================== RESORT GRID ===================== -->
+
+  <div class="resort-grid">
+
+    <!-- CAMPER VILLAGE -->
+    <div class="resort-card">
+      <div class="resort-title">Camper Village</div>
+
+      <div class="slideshow-container" data-slideshow="1">
+        <img class="slide slide-1" src="images/campervillage1.jpg" alt="">
+        <img class="slide slide-1" src="images/campervillage2.jpg" alt="">
+        <img class="slide slide-1" src="images/campervillage3.jpg" alt="">
+
+        <div class="prev" onclick="changeSlide(-1, 1)">❮</div>
+        <div class="next" onclick="changeSlide(1, 1)">❯</div>
+      </div>
+
+      <p class="resort-description">
+        Enjoy an outdoor camping experience with beautiful lakeside views and modern amenities.
+      </p>
+    </div>
+
+    <!-- LIGHTHOUSE POINT -->
+    <div class="resort-card">
+      <div class="resort-title">Lighthouse Point</div>
+
+      <div class="slideshow-container" data-slideshow="2">
+        <img class="slide slide-2" src="images/lighthousepoint1.jpg" alt="">
+        <img class="slide slide-2" src="images/lighthousepoint1.jpeg" alt="">
+        <img class="slide slide-2" src="images/Lighthousepoint2.jpeg" alt="">
+
+        <div class="prev" onclick="changeSlide(-1, 2)">❮</div>
+        <div class="next" onclick="changeSlide(1, 2)">❯</div>
+      </div>
+
+      <p class="resort-description">
+        Stay in cozy cabins and cottages overlooking the iconic Cedar Point lighthouse.
+      </p>
+    </div>
+
+    <!-- HOTEL BREAKERS -->
+    <div class="resort-card">
+      <div class="resort-title">Hotel Breakers</div>
+
+      <div class="slideshow-container" data-slideshow="3">
+        <img class="slide slide-3" src="images/breakers1.jpeg" alt="">
+        <img class="slide slide-3" src="images/breakers2.jpeg" alt="">
+        <img class="slide slide-3" src="images/breakers3.jpeg" alt="">
+
+        <div class="prev" onclick="changeSlide(-1, 3)">❮</div>
+        <div class="next" onclick="changeSlide(1, 3)">❯</div>
+      </div>
+
+      <p class="resort-description">
+        A beachfront resort offering premium amenities, dining, and unbeatable park access.
+      </p>
+    </div>
+
+  </div>
+</main>
+  <footer class="wrap"><p>&copy; 2023 Cedar Point. All rights reserved.</p></footer>
+<script>
+let slideIndex = {1:1, 2:1, 3:1};
+
+function showSlides(n, slideshow) {
+  let slides = document.querySelectorAll(".slide-" + slideshow);
+  if (n > slides.length) slideIndex[slideshow] = 1;
+  if (n < 1) slideIndex[slideshow] = slides.length;
+
+  slides.forEach(s => s.style.display = "none");
+  slides[slideIndex[slideshow] - 1].style.display = "block";
+}
+
+function changeSlide(n, slideshow) {
+  showSlides(slideIndex[slideshow] += n, slideshow);
+}
+
+showSlides(1, 1);
+showSlides(1, 2);
+showSlides(1, 3);
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cedar Point — Resort & Attractions</title>
+  <link rel="stylesheet" href="https://use.typekit.net/bpy2tfa.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+ <title>Hamburger Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        nav {
+            background: rgb(9, 54, 255);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: rgb(255, 123, 0);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            transition: all 0.3s;
+            border-radius: 3px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: rgb(9, 54, 255);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgb(9, 54, 255);
+                width: 100%;
+                text-align: center;
+                transition: left 0.3s;
+                padding: 2rem 0;
+                gap: 0;
+            }
+
+            .nav-links li {
+                padding: 1rem 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">MyWebsite</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history3.html">History</a></li>
+            <li><a href="resort3.html">Resort</a></li>
+            <li><a href="awards2.html">Awards</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+  <main class="wrap">
+    <h1>Awards & Attractions</h1>
+    <div class="container">
+    </div>
+    
+    <section id="awards" class="container">
+            <div class="awards-grid">
+             
+                
+                <div class="award">
+                    <span class="award-number">Best Amusement Park</span>
+                    <h3>Golden Ticket Award</h3>
+                    <h4>Named Best Amusement Park in the world by Amusement Today, continuing our legacy of excellence.</h4>
+                </div>
+
+                <div class="award">
+                    <span class="award-number">Roller Coasters</span>
+                    <h3>Best Steel Roller Coaster</h3>
+                    <h4>Steel Vengeance continues to dominate as the best steel roller coaster in the world.</h4>
+                </div>
+
+                <div class="award">
+                    <span class="award-number">Guest Experience</span>
+                    <h3>Cleanest Park Award</h3>
+                    <h4>Recognized for maintaining exceptional cleanliness and guest services throughout the park.</h4>
+                </div>
+
+                <div class="award">
+                    <span class="award-number">Innovation</span>
+                    <h3>Best New Ride</h3>
+                    <h4>Multiple awards for introducing groundbreaking roller coasters and attractions over the years.</h4>
+                </div>
+
+                  <div class="award">
+                    <span class="award-number">Food &amp; Dining</span>
+                    <h3>Best Food in a Park</h3>
+                    <h4>Honored for our diverse dining options and quality culinary experiences throughout the park.</h4>
+                </div>
+
+                  <div class="award">
+                    <span class="award-number">Entertainment</span>
+                    <h3>Best Shows &amp; Entertainment</h3>
+                    <h4>Recognized for world-class live entertainment and spectacular shows.</h4>
+                </div>
+
+            </div>
+        </section>
+  </div>
+</main>
+  <footer class="wrap"><p>&copy; 2023 Cedar Point. All rights reserved.</p></footer>
+</body>
+</html>

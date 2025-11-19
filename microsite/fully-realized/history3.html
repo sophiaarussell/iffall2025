@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cedar Point — Resort & Attractions</title>
+  <link rel="stylesheet" href="https://use.typekit.net/bpy2tfa.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    nav {
+      background: rgb(9, 54, 255);
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: rgb(255, 123, 0);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      transition: all 0.3s;
+      border-radius: 3px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    main {
+      margin-top: 80px;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: rgb(9, 54, 255);
+      margin-bottom: 1rem;
+    }
+
+    /* ---------- TWO-COLUMN LAYOUT ---------- */
+    .container {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .column {
+      flex: 1;
+    }
+
+    /* ---------- SLIDESHOW STYLES ---------- */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+    }
+
+    .slide-img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .slide-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .slide-buttons button {
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .slide-buttons button:hover {
+      background: rgba(0,0,0,0.8);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgb(9, 54, 255);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s;
+        padding: 2rem 0;
+        gap: 0;
+      }
+
+      .nav-links li {
+        padding: 1rem 0;
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">MyWebsite</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="history2.html">History</a></li>
+      <li><a href="resort3.html">Resort</a></li>
+      <li><a href="awards2.html">Awards</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <h1>150 Years of Cedar Point</h1>
+
+    <div class="container">
+
+      <!-- LEFT COLUMN — SLIDESHOW -->
+      <div class="column">
+        <div class="slideshow-container">
+          <img id="slide" class="slide-img" src="images/slide1.jpg" alt="Slideshow Image">
+
+          <div class="slide-buttons">
+            <button onclick="prevSlide()">❮</button>
+            <button onclick="nextSlide()">❯</button>
+          </div>
+        </div>
+
+        <p class="image-citation">Images courtesy of Cedar Point Archives.</p>
+        
+      </div>
+
+      <!-- RIGHT COLUMN — TEXT -->
+      <div class="column">
+        <p>Cedar Point is a 364-acre amusement park located on a Lake Erie peninsula in Sandusky, Ohio, United States, owned and operated by Six Flags. It opened in 1870 and is considered the second-oldest operating amusement park in the US behind Lake Compounce. Prior to the merger with Six Flags in 2024, Cedar Point served as the "flagship park" of the Cedar Fair amusement park chain and hosted the corporate headquarters. Known as "America's Roller Coast", the park features 18 roller coasters, which ranks second among amusement parks in North America behind sister park Six Flags Magic Mountain and Canada's Wonderland, each with 19.</p>
+
+        <p>Cedar Point's normal operating season runs from early May until Labor Day in September, which is followed by weekend-only operation through Halloween during an annual event known as HalloWeekends. Other amenities and attractions featured within the park include a one-mile-long (1.6 km) beach, an outdoor water park named Cedar Point Shores, an indoor water park named Castaway Bay, two marinas, and an outdoor sports complex called Cedar Point Sports Center.</p>
+        
+        <p>The park has reached numerous milestones over the years, including one in which Cedar Point became the only amusement park in the world with five roller coasters that exceed 200 feet (61 m) in height; Magnum XL-200, Millennium Force, Valravn, Steel Vengeance, and Top Thrill 2: as well as the only park with roller coasters in all four height classifications. Cedar Point also received the Golden Ticket Award for "Best Amusement Park in the World" from Amusement Today for sixteen consecutive years from 1997 to 2013. Among seasonal amusement parks in North America, Cedar Point consistently ranks as the second-most visited behind only Canada's Wonderland, with an estimated 3.44 million visitors in 2022. In addition, several of its buildings are listed on the National Register of Historic Places.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="wrap">
+    <p>&copy; 2023 Cedar Point. All rights reserved.</p>
+  </footer>
+
+  <!-- SLIDESHOW SCRIPT -->
+  <script>
+    const images = [
+      "images/slide1.jpg",
+      "images/slide2.jpeg",
+      "images/slide3.jpeg",
+      "images/slide4.jpeg",
+      "images/slide5.jpg",
+      "images/slide6.jpeg",
+      "images/slide7.jpeg",
+      "images/slide8.jpeg"
+
+    ];
+
+    let index = 0;
+
+    function showSlide() {
+      document.getElementById("slide").src = images[index];
+    }
+
+    function nextSlide() {
+      index = (index + 1) % images.length;
+      showSlide();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + images.length) % images.length;
+      showSlide();
+    }
+  </script>
+
+  <!-- MOBILE MENU SCRIPT -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
