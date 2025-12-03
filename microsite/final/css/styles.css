@@ -14,6 +14,7 @@ h1 {
     font-style: normal;
     font-size: 5rem;
     padding-top: 0px;
+    color: blue
 }
 
 @media screen and (max-width: 1075px) {
